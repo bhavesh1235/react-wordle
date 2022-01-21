@@ -24,8 +24,6 @@ const maxGuessCount = 6;
 //picked is array of individual letters of randamly selected word
 const picked = answers[getRandomInt(0,answers.length)].split('');
 
-console.log(picked)
-
 const App = () => {
   //final answer
   const [answer, setAnswer] = useState(picked);
