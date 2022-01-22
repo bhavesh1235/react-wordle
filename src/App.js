@@ -162,6 +162,10 @@ const App = () => {
         maxWordLength={maxWordLength}
         active={guessedLetterArray.length - (endOfLine ? 1 : 0)}
         guessedLetterArray={guessedLetterArray}
+        isWordGuessed={guessesUsedCount > i}
+        victory={victory}
+        answer={answer}
+
 
       />
     );
