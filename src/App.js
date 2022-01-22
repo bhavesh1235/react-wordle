@@ -47,6 +47,31 @@ const App = () => {
    //array of all letters typed till yet
   const [guessedLetterArray, setGuessedLetterArray] = useState([]);
 
+
+  useEffect(() => {
+    window.onkeydown = (e) => {
+      handleKeyDown(e.key);
+    };
+  });
+
+  const handleKeyDown = (key) => {
+  
+    const isLetter =
+      "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ".indexOf(key) !==
+      -1;
+    if (isLetter ) {
+      setGuessedLetterArray((guessedLetterArray) => [...guessedLetterArray, key.toUpperCase()]);
+      return;
+    }
+    if (key === "Backspace") {
+      let newInput = [...guessedLetterArray];
+    newInput.pop();
+    setGuessedLetterArray(newInput);
+      return;
+    }
+  };
+
+
   let letterRows = [];
   let i = 0;
 
