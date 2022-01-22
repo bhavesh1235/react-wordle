@@ -14,9 +14,6 @@ const App = () => {
   const [notificationMessage, setNotificationMessage] = useState("");
 
 
-  // final answer
-  // const [answer, setAnswer] = useState(picked);
-
   //count of guess word
   const [guessesUsedCount, setGuessesUsedCount] = useState(0);
 
@@ -41,11 +38,10 @@ const App = () => {
         <h1>
           Wordle <span style={{ color: "#ff7f50" }}>Play</span>
         </h1>
-      </header>
+      </header> 
+
       {/* <div className="mainDiv">
         <div className="App" style={{ maxWidth: "480px" }}>
-    
-
           <Notification
             timeOut={2500}
             notificationVisible={notificationVisible}
@@ -54,7 +50,8 @@ const App = () => {
           />
         </div>
       </div> */}
-      
+
+
     </Container>
   );
 };
