@@ -47,6 +47,19 @@ const App = () => {
    //array of all letters typed till yet
   const [guessedLetterArray, setGuessedLetterArray] = useState([]);
 
+  const endOfLine =
+    guessedLetterArray.length &&
+    guessedLetterArray.length % maxWordLength === 0 &&
+    guessesUsedCount < Math.floor(guessedLetterArray.length / maxWordLength);
+
+  //return true when we are on first block of every line
+  const startOfLine =
+    !guessedLetterArray.length ||
+    (guessedLetterArray.length % maxWordLength === 0 &&
+      guessesUsedCount >=
+        Math.floor(guessedLetterArray.length / maxWordLength));
+
+
 
   useEffect(() => {
     window.onkeydown = (e) => {
@@ -59,11 +72,15 @@ const App = () => {
     const isLetter =
       "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ".indexOf(key) !==
       -1;
-    if (isLetter ) {
+    if (isLetter && !endOfLine) {
       setGuessedLetterArray((guessedLetterArray) => [...guessedLetterArray, key.toUpperCase()]);
       return;
     }
     if (key === "Backspace") {
+      if (startOfLine) {
+        return;
+      }
+
       let newInput = [...guessedLetterArray];
     newInput.pop();
     setGuessedLetterArray(newInput);
