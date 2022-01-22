@@ -72,7 +72,10 @@ const App = () => {
   },[guessedLetterArray])
 
   const handleKeyDown = (key) => {
-  
+    if (key === "Enter") {
+      handleEnter();
+      return;
+    }
     const isLetter =
       "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ".indexOf(key) !==
       -1;
@@ -91,6 +94,61 @@ const App = () => {
       return;
     }
   };
+
+
+  const handleEnter = () => {
+    if (!endOfLine) {
+      setNotificationMessage("Not enough letters.");
+      setNotificationVisible(true);
+      return;
+    }
+    checkVictory();
+  };
+
+
+  const checkVictory = () => {
+    let i = 0;
+    let j = 0;
+    while (i < guessedLetterArray.length) {
+      let guess = [...guessedLetterArray].slice(i, i + maxWordLength);
+
+      let guessWord = guess.join("").toLowerCase();
+
+      //is called when not a valid word
+      if (validWords.indexOf(guessWord) === -1) {
+        let newGuesses = [...guessedLetterArray].slice(0, i);
+        setGuessedLetterArray(newGuesses);
+        setGuessesUsedCount(newGuesses.length / maxWordLength);
+        setNotificationMessage(
+          guessWord.toUpperCase() + " is not a valid word."
+        );
+        setNotificationVisible(true);
+        return;
+      }
+      i += maxWordLength;
+      j++;
+
+      setGuessesUsedCount(guessesUsedCount + 1);
+      if (answer.join() === guess.join()) {
+        setVictory(true);
+        setResultMessage(
+          <p className="result-message pt-2 pb-3">
+            You got the answer in {guessesUsedCount + 1} tries! Press Enter for
+            a new word.
+          </p>
+        );
+      } else if (j >= maxGuessCount) {
+        setFailure(true);
+        setResultMessage(
+          <p className="result-message pt-2 pb-3">
+            Sorry, the answer was "{answer.join("")}." Press Enter for a new
+            word.
+          </p>
+        );
+      }
+    }
+  };
+
 
 
   let letterRows = [];
