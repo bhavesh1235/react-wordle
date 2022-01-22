@@ -3,7 +3,7 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 
  const  WordRow = (props) => {
-  const { rowNum, maxWordLength  , guessedLetterArray
+  const { rowNum, maxWordLength  , guessedLetterArray,active
 } = props;
 
   let squares = [];
@@ -20,7 +20,9 @@ import Row from "react-bootstrap/Row";
     const letter = guessedLetterArray[i];
 
     squares.push(
-      <Col className="letterSquare pt-2" style={{ fontWeight: 600 }}>
+      <Col className={`letterSquare pt-2 ${active===i?"active":""}`} style={{ fontWeight: 600 }}
+     
+      >
         {letter}
       </Col>
     );

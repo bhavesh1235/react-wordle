@@ -102,6 +102,7 @@ const App = () => {
         key={`guess-row-${i}`}
         rowNum={i}
         maxWordLength={maxWordLength}
+        active={guessedLetterArray.length - (endOfLine ? 1 : 0)}
         guessedLetterArray={guessedLetterArray}
 
       />
