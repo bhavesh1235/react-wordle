@@ -191,7 +191,10 @@ const App = () => {
         <Row>
           <Col xs={12}>{letterRows}</Col>
         </Row>
-        <Notification timeOut={2500} />
+        <Notification timeOut={2500}
+        notificationVisible setNotificationVisible= {setNotificationVisible()} notificationMessage
+        
+        />
         {resultMessage && (
           <Row>
             <Col xs={12} className="p-0">
