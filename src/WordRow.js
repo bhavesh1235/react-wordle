@@ -45,7 +45,7 @@ import Row from "react-bootstrap/Row";
       }
     }
     squares.push(
-      <Col className={`letterSquare pt-2 ${result}${active===i && !victory?"active":""}`} style={{ fontWeight: 600 }}
+      <Col className={`letterSquare pt-2 ${result}${active===i && !victory?" active":""}`} style={{ fontWeight: 600 }}
      
       >
         {letter}
