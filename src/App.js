@@ -67,6 +67,10 @@ const App = () => {
     };
   });
 
+  useEffect(()=>{
+    console.log(guessedLetterArray)
+  },[guessedLetterArray])
+
   const handleKeyDown = (key) => {
   
     const isLetter =
@@ -98,6 +102,8 @@ const App = () => {
         key={`guess-row-${i}`}
         rowNum={i}
         maxWordLength={maxWordLength}
+        guessedLetterArray={guessedLetterArray}
+
       />
     );
     i++;
