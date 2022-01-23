@@ -69,12 +69,19 @@ const App = () => {
   });
 
   useEffect(()=>{
-    console.log(guessedLetterArray)
-  },[guessedLetterArray])
+    console.log(guessedLetterArray,answer)
+  },[guessedLetterArray,answer])
 
   const handleKeyDown = (key) => {
     if (key === "Enter") {
+      if (victory || failure) {
+        newGame();
+        return;
+      }
       handleEnter();
+      return;
+    }
+    if (victory) {
       return;
     }
     const isLetter =
@@ -150,6 +157,14 @@ const App = () => {
     }
   };
 
+  const newGame = () => {
+    setVictory(false);
+    setFailure(false);
+    setGuessedLetterArray([]);
+    setGuessesUsedCount(0);
+    setAnswer(answers[getRandomInt(0, answers.length)].split(""));
+    setResultMessage(null);
+  };
 
 
   let letterRows = [];
@@ -166,7 +181,7 @@ const App = () => {
         isWordGuessed={guessesUsedCount > i}
         victory={victory}
         answer={answer}
-        
+
       />
     );
     i++;
