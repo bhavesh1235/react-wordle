@@ -226,7 +226,7 @@ const App = () => {
         style={{ maxWidth: "480px", }}
       >
         <Row>
-          <Col xs={12}>{letterRows}</Col>
+          <Col >{letterRows}</Col>
         </Row>
         <Notification timeOut={2500} />
         {resultMessage && (

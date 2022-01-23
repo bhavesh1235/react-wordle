@@ -9,6 +9,7 @@
   /* margin:0rem 2rem; */
   margin-left:  12rem;
   margin-right:  5rem;
+  width: 500px;
 
 
 }
@@ -16,8 +17,11 @@
 .mainDiv{
 	display: flex;
 	justify-content: start;
+	height: 700px;
+}
 
-
+.row{
+	flex-wrap: nowrap!important;
 }
 
 body {
@@ -26,7 +30,6 @@ body {
     background: linear-gradient(180deg, #2186f2 35%, #fff 65%);
 	color: white;
 	box-sizing: border-box;
-	overflow:hidden
 
 	
 		
@@ -36,6 +39,8 @@ body {
 	
 	background: white;
 	margin-left:  0rem;
+	/* flex-wrap: nowrap!important; */
+	overflow: scroll;
 	
 	
 }	
