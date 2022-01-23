@@ -45,14 +45,12 @@ const App = () => {
   const [guessedLetterArray, setGuessedLetterArray] = useState([]);
 
   const endOfLine =
-    guessedLetterArray.length &&
-    guessedLetterArray.length % maxWordLength === 0 &&
     guessesUsedCount < Math.floor(guessedLetterArray.length / maxWordLength);
 
   //return true when we are on first block of every line
   const startOfLine =
     !guessedLetterArray.length ||
-    (guessedLetterArray.length % maxWordLength === 0 &&
+    (guessedLetterArray.length % maxWordLength === 0 &&                                                                                                                                                                                                                                                                                                                                                                                                                                 
       guessesUsedCount >=
         Math.floor(guessedLetterArray.length / maxWordLength));
 
