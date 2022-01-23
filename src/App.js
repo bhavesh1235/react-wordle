@@ -166,8 +166,7 @@ const App = () => {
         isWordGuessed={guessesUsedCount > i}
         victory={victory}
         answer={answer}
-
-
+        
       />
     );
     i++;
@@ -192,7 +191,7 @@ const App = () => {
           <Col xs={12}>{letterRows}</Col>
         </Row>
         <Notification timeOut={2500}
-        notificationVisible setNotificationVisible= {setNotificationVisible()} notificationMessage
+        notificationVisible={notificationVisible} setNotificationVisible= {setNotificationVisible} notificationMessage={notificationMessage}
         
         />
         {resultMessage && (

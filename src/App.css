@@ -1,132 +1,141 @@
 .App {
-  text-align: center;
-  position: relative;
-  margin-top: 3rem;
-  background: #89CFF0;
-  border-radius: 3rem;
-  padding: 2rem;
-  box-shadow: 0px 12px 23px rgba(0, 0, 0, 0.1);
-  /* margin:0rem 2rem; */
-  margin-left:  12rem;
-  margin-right:  5rem;
-
-
-}
-
-.mainDiv{
-	display: flex;
-	justify-content: start;
-
-
-}
-
-body {
-
-	height: 100vh;
-    background: linear-gradient(180deg, #2186f2 35%, #fff 65%);
-	color: white;
-	box-sizing: border-box;
-	overflow:hidden
-
-	
-		
-}
-
-.rules{
-	
-	background: white;
-	margin-left:  0rem;
-	
-	
-}	
-.rules .heading{
-	text-decoration: underline;
-}
-.rules .heading, .rules ol li{
-	color: #2186f2;
-	font-size: 1.5rem;
-	
-}
-.rules ol li {
-	text-align: start;
-	text-transform: capitalize;
-	font-size: 1.3rem;
-	margin: 1rem 0;
-	
-}	
-
-h1{
-font-size: 5rem	;		
-}
-
-* {
-	outline: none;
-}
-
-.letterSquare {
-	width: 48px;
-	height: 48px;
-	margin: 1rem;
-	border-radius: 1rem;
-	color: #2186f2;
-	background-color: #fff;
-	box-shadow: 0px 12px 23px rgba(0, 0, 0, 0.1);
-}
-@media (max-width:767px) {
-	.letterSquare {
-		height: 40px;
-	}
-}
-
-
-
-
-.wrong-spot {
-	background-color: goldenrod;
-	color: white;
-}
-.right-spot {
-	background-color: green;
-	color: white;
-}
-.no-spot {
-	background-color: #666;
-	color: white;
-}
-.active {
-	border: 1px solid #2186f2;
-	background: #ACACAC;
-	transition: all 0.3s ease;
-}
-#root, #root > div {
-	height: 100%;
-}
-.result-message {
-	width: 100%;
-	padding: 1.5rem;
 	text-align: center;
-	background: #EF0107;
-	margin: 0;
-	font-weight: 600;
-	color: white;
+	position: relative;
+	margin-top: 3rem;
+	background: #89CFF0;
 	border-radius: 3rem;
-
-}
-.opacity-0 {
-	opacity: 0;
-}
-.opacity-90 {
-	opacity: .9;
-}
-.notification {
-	background: rgb(222,222,222,.9);
-	color: #633;
-	transition: opacity .25s;
-	position: absolute;
-	width: 300px;
-	height: 100px;
-	padding: 2.5rem .5rem;
-	top: calc(50% - 50px);
-	left: calc(50% - 150px);
-	font-weight: 600;
-}
+	padding: 2rem;
+	box-shadow: 0px 12px 23px rgba(0, 0, 0, 0.1);
+	/* margin:0rem 2rem; */
+	margin-left:  12rem;
+	margin-right:  5rem;
+	width: 500px;
+  
+  
+  }
+  
+  .mainDiv{
+	  display: flex;
+	  justify-content: start;
+	  height: 700px;
+  }
+  
+  .row{
+	  flex-wrap: nowrap!important;
+  }
+  
+  body {
+  
+	  height: 100vh;
+	  background: linear-gradient(180deg, #2186f2 35%, #fff 65%);
+	  color: white;
+	  box-sizing: border-box;
+  
+	  
+		  
+  }
+  
+  .rules{
+	  
+	  background: white;
+	  margin-left:  0rem;
+	  /* flex-wrap: nowrap!important; */
+	  overflow: scroll;
+	  
+	  
+  }	
+  .rules::-webkit-scrollbar{
+	  display: none;
+  }
+  .rules .heading{
+	  text-decoration: underline;
+  }
+  .rules .heading, .rules ol li{
+	  color: #2186f2;
+	  font-size: 1.5rem;
+	  
+  }
+  .rules ol li {
+	  text-align: start;
+	  text-transform: capitalize;
+	  font-size: 1.3rem;
+	  margin: 1rem 0;
+	  
+  }	
+  
+  h1{
+  font-size: 5rem	;		
+  }
+  
+  * {
+	  outline: none;
+  }
+  
+  .letterSquare {
+	  width: 48px;
+	  height: 48px;
+	  margin: 1rem;
+	  border-radius: 1rem;
+	  color: #2186f2;
+	  background-color: #fff;
+	  box-shadow: 0px 12px 23px rgba(0, 0, 0, 0.1);
+  }
+  @media (max-width:767px) {
+	  .letterSquare {
+		  height: 40px;
+	  }
+  }
+  
+  
+  
+  
+  .wrong-spot {
+	  background-color: goldenrod;
+	  color: white;
+  }
+  .right-spot {
+	  background-color: green;
+	  color: white;
+  }
+  .no-spot {
+	  background-color: #666;
+	  color: white;
+  }
+  .active {
+	  border: 1px solid #2186f2;
+	  background: #ACACAC;
+	  transition: all 0.3s ease;
+  }
+  #root, #root > div {
+	  height: 100%;
+  }
+  .result-message {
+	  width: 100%;
+	  padding: 1.5rem;
+	  text-align: center;
+	  background: #EF0107;
+	  margin: 0;
+	  font-weight: 600;
+	  color: white;
+	  border-radius: 3rem;
+  
+  }
+  .opacity-0 {
+	  opacity: 0;
+  }
+  .opacity-90 {
+	  opacity: .9;
+  }
+  .notification {
+	  background: rgb(222,222,222,.9);
+	  color: #633;
+	  transition: opacity .25s;
+	  position: absolute;
+	  width: 300px;
+	  height: 100px;
+	  padding: 2.5rem .5rem;
+	  top: calc(50% - 50px);
+	  left: calc(50% - 150px);
+	  font-weight: 600;
+  }
+  
