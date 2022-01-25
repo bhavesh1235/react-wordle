@@ -6,7 +6,8 @@ import React, { useState, useEffect } from "react";
 import answers from './answers.json'
 import Container from "react-bootstrap/Container";
 import Notification from "./Notification";
-import validWords from './validWords.json'
+import validWords from './validWords.json';
+import WordRow from "./WordRow";
 
 const getRandomInt = (min, max) => {
   min = Math.ceil(min);
