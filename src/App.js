@@ -8,6 +8,7 @@ import Container from "react-bootstrap/Container";
 import Notification from "./Notification";
 import validWords from './validWords.json';
 import WordRow from "./WordRow";
+import logo from './static/logo.jpg'
 
 const getRandomInt = (min, max) => {
   min = Math.ceil(min);
@@ -63,7 +64,7 @@ const App = () => {
       className="h-100 text-center  md-3 pt-lg-4 px-0 px-sm-4 topDiv"
     >
       <header className="d-sm-none d-md-block">
-        <h5 className="mt-md-4 mt-lg-5">CodeFoster Presents</h5>
+        <h5 className="mt-md-4 mt-lg-5">  <img src ={logo} className="logo"></img>CodeFoster Presents</h5>
         <h1>Wordle <span style={{color:'#ff7f50'}}>Play</span></h1>
       </header>
       {/* <div className="mainDiv">
